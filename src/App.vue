@@ -56,6 +56,7 @@ body {
 }
 .container-main {
   margin-top: 40px;
+  margin-bottom: 55px;
 }
 .mint-button--default {
   background-color: white;

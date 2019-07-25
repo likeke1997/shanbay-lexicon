@@ -1,5 +1,5 @@
 <template>
-  <div class="container-lexicon">
+  <div>
     <mt-navbar v-model="selected">
       <mt-tab-item
         v-for="(category, categoryIndex) in categories"
@@ -69,10 +69,6 @@ export default {
 </script>
 
 <style scoped>
-.container-lexicon {
-  margin-bottom: 54px;
-}
-
 .tab {
   height: 200px;
 }

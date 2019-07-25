@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-list">
     <mt-search v-model="keyword" cancel-text="取消" placeholder="查询英文或者中文" show>
       <div class="container-wordlist">
         <mt-cell
@@ -130,6 +130,10 @@ export default {
 </script>
 
 <style scoped>
+.container-list {
+  margin-bottom: -55px;
+}
+
 .container-wordlist {
   margin-top: 48px;
 }
