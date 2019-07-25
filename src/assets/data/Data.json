@@ -1,0 +1,26 @@
+[
+  {
+    "name": "currentWordbook",
+    "default": {
+      "categoryIndex": 0,
+      "wordbookIndex": 0
+    }
+  },
+  {
+    "name": "currentProgress",
+    "default": {}
+  },
+  {
+    "name": "currentCollect",
+    "default": {}
+  },
+  {
+    "name": "userInfo",
+    "default": {
+      "nickname": "柯柯",
+      "gender": "男",
+      "birthday": "1997-02-28",
+      "introduction": "这个人很懒，什么都没有写。"
+    }
+  }
+]
