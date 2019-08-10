@@ -87,7 +87,7 @@ export default {
         }
         return indexes.length == count
           ? indexes
-          : createRandomWords(indexes, count, length);
+          : createRandomWords(indexes, count, length, random, getWordProgress);
       }
       let indexes = createRandomWords(
           [],
@@ -194,12 +194,12 @@ export default {
     setOptions() {
       function createRandomOptions(indexes, count, length, order) {
         let index = Math.floor(Math.random() * length);
-        if (!indexes.includes(index) && !indexes.includes(order)) {
+        if (!indexes.includes(index) && index != order) {
           indexes.push(index);
         }
         return indexes.length == count
           ? indexes
-          : createRandomOptions(indexes, count, length);
+          : createRandomOptions(indexes, count, length, order);
       }
       let indexes = createRandomOptions([], 4, this.configCount, this.order),
         options = [];
@@ -211,7 +211,10 @@ export default {
           zh: this.questions[index]["zh"]
         });
       }
-      options[Math.floor(Math.random() * 4)] = this.questions[this.order];
+      let rightIndex = Math.floor(Math.random() * 4);
+      options[rightIndex]["index"] = this.questions[this.order]["index"];
+      options[rightIndex]["en"] = this.questions[this.order]["en"];
+      options[rightIndex]["zh"] = this.questions[this.order]["zh"];
       this.options = options;
       if (Math.floor(Math.random() * 2) == 1) {
         this.langQuestions = "en";
@@ -222,7 +225,8 @@ export default {
       }
     },
     isRightOption(optionIndex) {
-      return this.options[optionIndex] == this.questions[this.order]
+      return this.options[optionIndex]["index"] ==
+        this.questions[this.order]["index"]
         ? true
         : false;
     }
