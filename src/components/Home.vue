@@ -37,7 +37,7 @@ export default {
       store,
       configCount: "10",
       configRandom: "random",
-      currentWordbook: {}
+      currentWordbook: {},
     };
   },
   methods: {
@@ -49,19 +49,19 @@ export default {
         path: "/home/learn",
         query: {
           count: this.configCount,
-          random: this.configRandom
-        }
+          random: this.configRandom,
+        },
       });
-    }
+    },
   },
   watch: {
     $route() {
       this.setCurrentWordbook();
-    }
+    },
   },
   components: {
-    Wordbook
-  }
+    Wordbook,
+  },
 };
 </script>
 

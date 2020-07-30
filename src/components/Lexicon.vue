@@ -42,7 +42,7 @@ export default {
       selected: "category-0",
       categories: [],
       wordbooks: [],
-      currentWordbook: {}
+      currentWordbook: {},
     };
   },
   methods: {
@@ -60,11 +60,11 @@ export default {
     },
     isCurrentWordbook(categoryIndex, wordbookIndex) {
       return this.store.action.isCurrentWordbook(categoryIndex, wordbookIndex);
-    }
+    },
   },
   components: {
-    Wordbook
-  }
+    Wordbook,
+  },
 };
 </script>
 

@@ -18,8 +18,8 @@ export default {
         "/home": "主页",
         "/lexicon": "单词书",
         "/user": "我的",
-        "/home/learn": "背词"
-      }
+        "/home/learn": "背词",
+      },
     };
   },
   methods: {
@@ -40,7 +40,7 @@ export default {
         title = this.titleMap[to.path];
       }
       this.title = title;
-    }
+    },
   },
   computed: {
     isMainPage() {
@@ -53,13 +53,13 @@ export default {
       } else {
         return false;
       }
-    }
+    },
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       this.changeTitle(to);
-    }
-  }
+    },
+  },
 };
 </script>
 

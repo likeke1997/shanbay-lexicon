@@ -21,20 +21,20 @@ export default {
       items: [
         { id: "home", text: "主页" },
         { id: "lexicon", text: "单词书" },
-        { id: "user", text: "我的" }
-      ]
+        { id: "user", text: "我的" },
+      ],
     };
   },
   methods: {
     iconSrc(name) {
-      return require("../assets/img/icon-" + name + ".png");
+      return require("@/assets/img/icon-" + name + ".png");
     },
     setPage() {
       this.page = this.$route.params.page;
     },
     changePage() {
       this.$router.push("/" + this.page);
-    }
+    },
   },
   watch: {
     $route() {
@@ -42,8 +42,8 @@ export default {
     },
     page() {
       this.changePage();
-    }
-  }
+    },
+  },
 };
 </script>
 

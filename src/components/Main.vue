@@ -25,13 +25,13 @@ export default {
   },
   data() {
     return {
-      page: "home"
+      page: "home",
     };
   },
   components: {
     Home,
     Lexicon,
-    User
+    User,
   },
   methods: {
     setPage() {
@@ -39,7 +39,7 @@ export default {
     },
     changePage() {
       this.$router.push("/" + this.page);
-    }
+    },
   },
   watch: {
     $route() {
@@ -47,8 +47,8 @@ export default {
     },
     page() {
       this.changePage();
-    }
-  }
+    },
+  },
 };
 </script>
 

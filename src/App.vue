@@ -29,12 +29,12 @@ export default {
       } else {
         return false;
       }
-    }
+    },
   },
   components: {
     Header,
-    Tabbar
-  }
+    Tabbar,
+  },
 };
 </script>
 

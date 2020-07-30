@@ -45,7 +45,7 @@ export default {
       nickname: "",
       gender: "",
       birthday: "",
-      introduction: ""
+      introduction: "",
     };
   },
   methods: {
@@ -76,10 +76,10 @@ export default {
     // 重置数据的询问窗口
     resetDataQuery() {
       MessageBox.confirm(this.nickname + "，您确定要重置所有的数据吗?")
-        .then(action => {
+        .then(() => {
           this.resetDataConfirm();
         })
-        .catch(action => {
+        .catch(() => {
           this.resetDataCancel();
         });
     },
@@ -91,18 +91,18 @@ export default {
     // 重置数据取消的操作
     resetDataCancel() {},
     toAuthorHome() {
-      window.open("http://www.likeke1997.com");
-    }
+      window.open("https://github.com/likeke1997");
+    },
   },
 
   watch: {
     // 跳转到其他页面时，自动结束编辑
-    $route(to, from) {
+    $route(to) {
       if (to.path != "/user") {
         this.endEditing();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

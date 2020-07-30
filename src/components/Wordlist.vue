@@ -15,7 +15,7 @@
             plain
             :type="collects[wordObjIndex]? 'default':'primary'"
             @click.native="removeWordCollect(wordObj,wordObjIndex)"
-          >{{collects[wordObjIndex]? '取消':'收藏'}}</mt-button>&nbsp
+          >{{collects[wordObjIndex]? '取消':'收藏'}}</mt-button>
         </mt-cell>
         <mt-cell v-if="!collect" v-show="filterWord({zh:'',en:''})">
           <div slot="title" class="container-progresses">
@@ -37,7 +37,7 @@
           <mt-badge
             :type="getWordProgress(categoryIndex,wordbookIndex,wordIndex,'type')"
             size="small"
-          >{{getWordProgress(categoryIndex,wordbookIndex,wordIndex,'text')}}</mt-badge>&nbsp
+          >{{getWordProgress(categoryIndex,wordbookIndex,wordIndex,'text')}}</mt-badge>
         </mt-cell>
       </div>
     </mt-search>
@@ -66,8 +66,8 @@ export default {
         { progress: 0, type: "primary", text: "陌生" },
         { progress: 1, type: "success", text: "认识" },
         { progress: 2, type: "warning", text: "熟悉" },
-        { progress: 3, type: "error", text: "太简单" }
-      ]
+        { progress: 3, type: "error", text: "太简单" },
+      ],
     };
   },
   methods: {
@@ -124,8 +124,8 @@ export default {
       return (
         word["en"].includes(this.keyword) || word["zh"].includes(this.keyword)
       );
-    }
-  }
+    },
+  },
 };
 </script>
 

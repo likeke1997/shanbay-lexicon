@@ -65,12 +65,12 @@ export default {
       wordbook: "",
       count: "",
       countUnknow: "",
-      progress: ""
+      progress: "",
     };
   },
   methods: {
     imgSrc(i1, i2) {
-      return require("../assets/img/wordbook-" + i1 + "-" + i2 + ".png");
+      return require("@/assets/img/wordbook-" + i1 + "-" + i2 + ".png");
     },
     setCategory() {
       this.category = this.store.action.getCategories()[this.categoryIndex];
@@ -111,8 +111,8 @@ export default {
       this.$router.push(
         "/lexicon/" + this.categoryIndex + "/" + this.wordbookIndex
       );
-    }
-  }
+    },
+  },
 };
 </script>
 

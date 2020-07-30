@@ -52,7 +52,7 @@ export default {
       langOptions: "",
       countRight: 0,
       countWrong: 0,
-      order: -1
+      order: -1,
     };
   },
   methods: {
@@ -102,7 +102,7 @@ export default {
         questions.push({
           index,
           en: wordlist[index]["en"],
-          zh: wordlist[index]["zh"]
+          zh: wordlist[index]["zh"],
         });
       }
       this.categoryIndex = categoryIndex;
@@ -111,6 +111,7 @@ export default {
     },
     goAhead(condition, option) {
       let ref;
+      var that;
       if (option) {
         ref = this.$refs["option-" + option][0];
       }
@@ -138,7 +139,7 @@ export default {
             Toast({
               message: `该单词已在收藏夹中`,
               position: "bottom",
-              duration: 2000
+              duration: 2000,
             });
           } else {
             this.store.action.addWordCollect(
@@ -157,8 +158,8 @@ export default {
             1
           );
           ref.$el.style.backgroundColor = "rgb(76,175,80)";
-          var that = this;
-          setTimeout(function() {
+          that = this;
+          setTimeout(function () {
             ref.$el.style.backgroundColor = "rgb(38,162,255)";
             that.goAhead2();
           }, 500);
@@ -167,8 +168,8 @@ export default {
         case "wrong":
           this.countWrong += 1;
           ref.$el.style.backgroundColor = "rgb(244,64,54)";
-          var that = this;
-          setTimeout(function() {
+          that = this;
+          setTimeout(function () {
             ref.$el.style.backgroundColor = "rgb(38,162,255)";
             that.goAhead2();
           }, 500);
@@ -186,7 +187,7 @@ export default {
         Toast({
           message: `背词完成，正确${this.countRight}，错误${this.countWrong}。请继续加油~`,
           position: "middle",
-          duration: 5000
+          duration: 5000,
         });
         this.$router.push("/");
       }
@@ -208,7 +209,7 @@ export default {
         options.push({
           index,
           en: this.questions[index]["en"],
-          zh: this.questions[index]["zh"]
+          zh: this.questions[index]["zh"],
         });
       }
       let rightIndex = Math.floor(Math.random() * 4);
@@ -229,8 +230,8 @@ export default {
         this.questions[this.order]["index"]
         ? true
         : false;
-    }
-  }
+    },
+  },
 };
 </script>
 
